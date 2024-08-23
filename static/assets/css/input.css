@@ -1,0 +1,134 @@
+.chat-input {
+    position: relative; /* Ensures that the file preview can be positioned absolutely */
+    padding: 10px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.input-container {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    border: 1px solid #ccc;  /* Input framework */
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    background-color: #f6f6f6;  /* Same to background-color of .chat-input #user-input */
+}
+
+
+.chat-input #user-input {
+    flex-grow: 1;
+    border: none;
+    padding: 0 10px;
+    outline: none;
+    box-sizing: border-box;
+    height: auto; /* Allows for dynamic height */
+    max-height: 150px; /* Set a max height to prevent it from growing too large */
+    resize: none; /* Prevents manual resizing */
+    background-color: #f6f6f6;
+}
+
+/* ------------------------------------------------------------*/
+
+.chat-input .upload-button {
+    margin-left: 10px;
+    background-color: #d3d3d3;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    height: 100%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-input .upload-button:hover {
+    background-color: #c0c0c0;
+}
+
+.chat-input .upload-button.disabled {
+    color: #c0c0c0; /* Use the same color */
+    cursor: not-allowed; /* Change the cursor to let user know they need to wait */
+}
+
+.chat-popup.dragging {
+    border: 2px dashed #58B82B;
+    background-color: #e6f7ff;
+}
+
+/* ------------------------------------------------------------*/
+
+.chat-input #file-preview {
+    position: absolute;
+    bottom: 100%;
+    left: 10px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: -7px;  /* Minus some padding-top value of .chat-input while keep it */
+    overflow: hidden; /* Hide overflow to maintain a clean look */
+    z-index: 1; /* Ensure the preview is above other elements */
+}
+
+.file-thumbnail {
+    height: 50px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.file-thumbnail-container {
+    position: relative;
+    display: inline-block;
+}
+
+.delete-file-button {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    background-color: #ff000040;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.delete-file-button:hover {
+    background-color: rgb(150, 0, 0);
+}
+
+/* ------------------------------------------------------------*/
+
+.chat-input .send-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    height: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.chat-input .send-button:hover {
+    background-color: #218838;
+}
+
+.chat-input .send-button.disabled {
+    background-color: #c0c0c0; /* Use the same color */
+    cursor: not-allowed; /* Change the cursor to let user know they need to wait */
+}

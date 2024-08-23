@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Interface</title>
+    <link rel="stylesheet" href="./assets/css/body.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/message.css">
+    <link rel="stylesheet" href="./assets/css/input.css">
+</head>
+<body>
+    <div class="chat-button" id="chat-button" aria-label="Need Help?">Need help?</div>
+    <div class="chat-popup" id="chat-popup">
+        <div class="chat-header">
+            <span>Help Centre</span>
+            <span>
+                <button id="refresh-chat" class="refresh-button" title="Refresh The Chat" aria-label="Refresh the chat">⟳</button>
+                <button id="minimise-chat" class="minimise-button" title="Minimise Chat Window" aria-label="Minimise chat window">–</button>
+            </span>
+        </div>
+        <div class="model-selection">
+            <select id="model-select" aria-label="Model selection" title="Model Selection">
+                <option value="offline">Local Mode</option>
+                <option value="online">Cloud Mode</option>
+            </select>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <div class="message bot-message">Hi there! How can I help you today?</div>
+        </div>
+        <div id="file-preview" class="file-preview"></div>
+        <div class="chat-input" id="chat-input">
+            
+            <div class="input-container">
+                <input type="file" id="file-input" style="display: none;" multiple>
+                <button id="upload-file" class="upload-button" aria-label="Upload file">+</button> 
+                <textarea id="user-input" placeholder="Type your message..." aria-label="User message input"></textarea>
+                <button id="send-message" class="send-button" aria-label="Send message">Send</button>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/chatWindow.js"></script>
+    <script src="./assets/js/fileUpload.js"></script>
+    <script src="./assets/js/sendMessage.js"></script>
+    <script src="./assets/js/switchModel.js"></script>
+    <script>
+        const apiUrl = 'http://127.0.0.1:5000'; // Replace with your Flask server URL
+    </script>
+</body>
+</html>
